@@ -1,5 +1,6 @@
 package mari.java.teste;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.BufferedReader;
@@ -9,32 +10,34 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Slf4j
 @SpringBootApplication
 public class TesteApplication {
 
 	public static void main(String[] args) {
 		int[] nums = {1,2,3,4,5};
 
-		System.out.println("Matriz com ordem inversa: ");
+		log.info("Matriz de objetos: " + Arrays.toString(nums));
 		reverse(nums);
-		System.out.println(Arrays.toString(nums));
+		log.info("Matriz com ordem inversa: " + Arrays.toString(nums));
 
+		log.info("....................................................................");
 
-		System.out.println("Reversão in-place: ");
 		int[] mewNums = {1,2,3,4,5};
-		System.out.println(Arrays.toString(reverseInPlace(mewNums)));
+		log.info("Reversão in-place: " + Arrays.toString(reverseInPlace(mewNums)));
 
+		log.info("....................................................................");
 
-		System.out.println("Reversão in-place List: ");
 		List<String> colors = new ArrayList<>(Arrays.asList("RED", "BLUE", "BLACK"));
 		reverseList(colors);
-		System.out.println(colors);
+		log.info("Reversão in-place List: " + colors);
 
+		log.info("....................................................................");
 
-		System.out.println("Arquivo CSV (valores separados por vírgula) passado como um java.io.BufferedReader");
-
+		log.info("Arquivo CSV (valores separados por vírgula) passado como um java.io.BufferedReader: ");
 		getFileCSV();
 
+		System.out.println();
 	}
 
 	public static void reverse(int[] nums)
