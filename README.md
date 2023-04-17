@@ -1,10 +1,9 @@
 # arrays-java
 
- Classe Java com métodos estáticos que:
-1. Dada uma matriz de Objetos, retorna outra matriz que contém os mesmos elementos da matriz de entrada ao contrário
-ordem. A matriz original não deve ser alterada,
-2. Igual a (1), mas a reversão deve ser feita in-loco, ou seja, o array retornado deve ser o mesmo que foi passado
-como argumento para o método.
-3. O mesmo que (2), mas o argumento deve ser um java.util.List
-4. Dado um arquivo CSV (valores separados por vírgula) passado como um java.io.BufferedReader, retorna uma matriz de String
-correspondente aos valores dos campos
+Write a Java class with static methods that:
+1. Given an array of Objects, returns another array that contains the same elements of the input array in reverse 
+order. The original array must not be changed,
+2. Same as (1), but the reversal must be done in-place, that is, the returned array must be the same that was passed 
+as argument to the method.
+3. Same as (2), but the argument must be a java.util.List
+4. Given a CSV (Comma-separated values)
