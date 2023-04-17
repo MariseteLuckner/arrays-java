@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
 
 @Slf4j
 @SpringBootApplication
@@ -18,8 +19,9 @@ public class TesteApplication {
 		int[] nums = {1,2,3,4,5};
 
 		log.info("Matriz de objetos: " + Arrays.toString(nums));
-		reverse(nums);
-		log.info("Matriz com ordem inversa: " + Arrays.toString(nums));
+
+		List<Object> list = reverse(nums);
+		log.info("Matriz com ordem inversa: " + list);
 
 		log.info("....................................................................");
 
@@ -40,17 +42,10 @@ public class TesteApplication {
 		System.out.println();
 	}
 
-	public static void reverse(int[] nums)
-	{
-		int[] temp = new int[nums.length];
-
-		for (int i = 0; i < nums.length; i++) {
-			temp[nums.length - 1 - i] = nums[i];
-		}
-
-		for (int i = 0; i < nums.length; i++) {
-			nums[i] = temp[i];
-		}
+	public static List<Object> reverse(int[] nums) {
+		return new ArrayList<>(List.of(IntStream.rangeClosed(1, nums.length)
+				.mapToObj(i -> nums[nums.length - i])
+				.toArray()));
 	}
 
 	public static int[] reverseInPlace(int A[]) {
